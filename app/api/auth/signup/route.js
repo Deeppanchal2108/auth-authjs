@@ -1,4 +1,4 @@
-import { PrismaClient,User } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 import { NextResponse } from "next/server";
 import { hash } from "bcryptjs";
@@ -26,8 +26,7 @@ export  async function POST(req) {
 
     } catch (error) {
         console.log("Error :  ", error)
-
-        return NextResponse.json({ message: "Failed" })
+        return NextResponse.json({ message: "Failed" },{status:400})
     }
     
 }
