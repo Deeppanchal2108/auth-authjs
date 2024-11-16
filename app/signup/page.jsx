@@ -9,14 +9,11 @@ import { useRouter } from "next/navigation";
 export default function SignUpPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState(""); // default role
+    const [role, setRole] = useState(""); 
     const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // Register user with API
-
         const details = {
             email,password,role
         }
